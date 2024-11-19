@@ -74,10 +74,14 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-        <img src={usericon} alt="" className="w-8 lg:w-10"/>
         {
-          user ? <button onClick={logoutFunc} className="btn lg:w-20 w-12">LogOut</button>:<Link to="/login">
-          <a className="btn lg:w-20 w-12">Login</a>
+          user && user?.email ? <div className="flex">
+            <img src={user.photoURL} alt="" className="w-12 rounded-full" />
+          </div>:<img src={usericon} alt="" className="w-8 lg:w-10"/>
+        }
+        {
+          user ? <button onClick={logoutFunc} className="btn lg:w-20  w-14">LogOut</button>:<Link to="/login">
+          <a className="btn lg:w-20 w-14">Login</a>
       
       </Link>
         }

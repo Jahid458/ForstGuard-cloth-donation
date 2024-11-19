@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
 
 
-  const {handleResgister,setUser,googleLogIn} = useContext(authContext);
+  const {handleResgister,setUser,googleLogIn,updateUserProfile} = useContext(authContext);
   const navigate = useNavigate()
 
 
@@ -31,6 +31,13 @@ const Register = () => {
       handleResgister(email,password)
       .then(res => {
         setUser(res.user)
+        updateUserProfile({displayName:name, photoURL:photo})
+        .then(()=>{
+          navigate('/')
+        })
+        .catch(err =>{
+          console.log(err)
+        })
       })
   }
 
