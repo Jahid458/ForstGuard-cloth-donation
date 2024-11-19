@@ -1,12 +1,20 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "./AuthProvider";
+import glogo from '../assets/google.webp'
 
 
 const Login = () => {
-  const {handleLogin,setUser} = useContext(authContext);
+  const {handleLogin,setUser,googleLogIn} = useContext(authContext);
   const navigate = useNavigate()
   const location = useLocation();
+
+
+  const LogGoogle = ()=>{
+    googleLogIn()
+    navigate('/')
+  }
+
 
 
   const handleSubmit=(e)=>{
@@ -25,10 +33,12 @@ const Login = () => {
   return (
     <div>
         <div className="min-h-screen flex justify-center items-center rounded-2xl bg-base-200 p-3 mb-5" >
-      <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10 ">
+      <div className="card bg-base-100 lg:w-full max-w-lg shrink-0 rounded-none p-10 ">
         <h2 className="text-2xl font-semibold text-center">
           Login Your Account
         </h2>
+
+
         <form  onSubmit={handleSubmit} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -57,6 +67,13 @@ const Login = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-neutral rounded-none">Login</button>
+            <div className="divider">OR</div>
+                <button onClick={LogGoogle} className="btn rounded-xl text-md font-bold">
+                  <img src={glogo} alt="" className="w-7" />
+                      Continue With Google
+                </button>
+           
+
           </div>
         </form>
 

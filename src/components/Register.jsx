@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { authContext } from "./AuthProvider";
-
+import glogo from '../assets/google.webp'
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -8,8 +9,14 @@ import { authContext } from "./AuthProvider";
 const Register = () => {
 
 
-  const {handleResgister,setUser} = useContext(authContext);
+  const {handleResgister,setUser,googleLogIn} = useContext(authContext);
+  const navigate = useNavigate()
 
+
+  const LogGoogle = ()=>{
+    googleLogIn()
+    navigate('/')
+  }
 
   
 
@@ -99,7 +106,12 @@ const Register = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-neutral rounded-none">Register</button>
+            <button  className="btn btn-neutral rounded-none">Register</button>
+            <div className="divider">OR</div>
+                <button onClick={LogGoogle} className="btn rounded-xl text-md font-bold">
+                  <img src={glogo} alt="" className="w-7" />
+                      Continue With Google
+                </button>
           </div>
         </form>
     </div>
