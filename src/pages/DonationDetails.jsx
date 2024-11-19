@@ -33,7 +33,7 @@ const DonationDetails = () => {
     e.preventDefault();
     toast.success("Thank you! We will reach your destination soon");
     
-      // clear the From data
+    
     setFormData({
       quantity: "",
       itemType: "Blanket",

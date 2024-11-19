@@ -1,8 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/clothes-donation.png";
 import usericon from "../assets/user.png";
+import { useContext } from "react";
+import { authContext } from "./AuthProvider";
 
 const Navbar = () => {
+  const {user,handleLogout} = useContext(authContext);
+  const navigate = useNavigate()
+
+  const logoutFunc =  () =>{
+    handleLogout()
+    navigate("/login")
+
+  }
+  
   return (
     <div className="navbar bg-base-100 container mx-auto">
       <div className="navbar-start">
@@ -64,7 +75,12 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-3">
         <img src={usericon} alt="" className="w-8 lg:w-10"/>
-        <a className="btn lg:w-20 w-12">Login</a>
+        {
+          user ? <button onClick={logoutFunc} className="btn lg:w-20 w-12">LogOut</button>:<Link to="/login">
+          <a className="btn lg:w-20 w-12">Login</a>
+      
+      </Link>
+        }
       </div>
     </div>
   );

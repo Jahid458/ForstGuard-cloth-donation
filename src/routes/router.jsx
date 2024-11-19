@@ -3,6 +3,8 @@ import HomeLayout from "../Layout/HomeLayout";
 import Home from "../pages/Home/Home";
 import DonationCampaign from "../pages/DonationCampaign";
 import DonationDetails from "../pages/DonationDetails";
+import Login from "../components/Login";
+import Register from "../components/Register";
 
 const router = createBrowserRouter([
   {
@@ -39,14 +41,20 @@ const router = createBrowserRouter([
             const singleDonation = donationdata.find(d=>d.id == params.id)
             console.log(singleDonation)
             return singleDonation
-
         }
+      },
+      {
+        path:"/login",
+        element:<Login></Login>
+      },
+      {
+        path:"/register",
+        element:<Register></Register>
       }
-
     ]
-
-    
   },
+
+  
   
 ]);
 export default router;
