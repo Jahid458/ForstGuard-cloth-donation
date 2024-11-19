@@ -1,24 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "../components/Dashboard";
+import Login from "../components/Login";
+import PrivateRoute from "../components/PrivateRoute";
+import Register from "../components/Register";
 import HomeLayout from "../Layout/HomeLayout";
-import Home from "../pages/Home/Home";
 import DonationCampaign from "../pages/DonationCampaign";
 import DonationDetails from "../pages/DonationDetails";
-import Login from "../components/Login";
-import Register from "../components/Register";
+import Home from "../pages/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
-    children:[
+    children: [
       {
-        path:"/",
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
         path: "/donationcampaign",
         element: <DonationCampaign></DonationCampaign>,
-        loader: ()=>fetch('/Donation.json')
+        loader: () => fetch("/Donation.json"),
       },
       {
         path: "/help",
@@ -26,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <h1>Dashboard</h1>,
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
       },
       {
         path: "*",
@@ -34,27 +40,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/donationdetails/:id",
-        element: <DonationDetails></DonationDetails>,
-        loader:async({params})=>{
-            const res = await fetch('/Donation.json')
-            const donationdata =await res.json();
-            const singleDonation = donationdata.find(d=>d.id == params.id)
-            console.log(singleDonation)
-            return singleDonation
-        }
+        element: (
+          <PrivateRoute>
+            <DonationDetails></DonationDetails>
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          const res = await fetch("/Donation.json");
+          const donationdata = await res.json();
+          const singleDonation = donationdata.find((d) => d.id == params.id);
+          console.log(singleDonation);
+          return singleDonation;
+        },
       },
       {
-        path:"/login",
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path:"/register",
-        element:<Register></Register>
-      }
-    ]
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
   },
-
-  
-  
 ]);
 export default router;
