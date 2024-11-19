@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const DonationCard = ({ donation }) => {
   
@@ -18,7 +20,9 @@ const DonationCard = ({ donation }) => {
         <p className="text-gray-400">{description}</p>
         <h1 className="text-xl">Division:{division}</h1>
         <div className="card-actions justify-center">
+          <NavLink to={`/donationdetails/${donation.id}`}>
           <button className="btn btn-primary mt-2">Donate Now</button>
+          </NavLink>
         </div>
       </div>
     </div>

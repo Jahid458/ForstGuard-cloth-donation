@@ -1,4 +1,5 @@
 [
+
   {
     "id": 1,
     "title": "Barisal Winter Relief Drive",
@@ -13,7 +14,7 @@
     "title": "Barisal Cozy Campaign",
     "image": "https://i.ibb.co.com/NsP4zJ9/cozy-camoaign.webp",
     "description": "Donate your old winter clothes to help keep families warm in Barisal.",
-    "status": "active",
+    "status": "pending",
     "contactInfo": "cozy-barisal@donate.org",
     "division": "Barisal"
   },
@@ -31,7 +32,7 @@
     "title": "Chattogram Blanket Donation",
     "image": "https://i.ibb.co.com/1Jrk8XK/blanket1.jpg",
     "description": "Support our mission to deliver blankets and winter essentials to the underprivileged.",
-    "status": "active",
+    "status": "pending",
     "contactInfo": "blanket-chattogram@donate.org",
     "division": "Chattogram"
   },
@@ -112,7 +113,7 @@
     "title": "Rangpur Frost Relief",
     "image": "https://i.ibb.co.com/sFxNTPc/blanket13.jpg",
     "description": "Support our mission to provide warm clothing in the colder regions of Rangpur.",
-    "status": "active",
+    "status": "pending",
     "contactInfo": "frost-rangpur@donate.org",
     "division": "Rangpur"
   },
