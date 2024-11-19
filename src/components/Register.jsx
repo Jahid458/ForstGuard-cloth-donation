@@ -31,6 +31,7 @@ const Register = () => {
       handleResgister(email,password)
       .then(res => {
         setUser(res.user)
+        // eslint-disable-next-line no-undef
         updateUserProfile({displayName:name, photoURL:photo})
         .then(()=>{
           navigate('/')

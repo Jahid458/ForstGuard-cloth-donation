@@ -7,11 +7,13 @@ import HomeLayout from "../Layout/HomeLayout";
 import DonationCampaign from "../pages/DonationCampaign";
 import DonationDetails from "../pages/DonationDetails";
 import Home from "../pages/Home/Home";
+import ErrorPage from "../components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -34,10 +36,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "*",
-        element: <h1>Page Not Found</h1>,
-      },
+    
       {
         path: "/donationdetails/:id",
         element: (
