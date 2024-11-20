@@ -1,18 +1,29 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "./AuthProvider";
 import glogo from '../assets/google.webp'
 
 
 const Login = () => {
-  const {handleLogin,setUser,googleLogIn} = useContext(authContext);
+  const {handleLogin,setUser,googleLogIn,user} = useContext(authContext);
+  const [error,setError] = useState()
   const navigate = useNavigate()
   const location = useLocation();
 
 
   const LogGoogle = ()=>{
     googleLogIn()
-    navigate('/')
+    .then(res => {
+      // const user = res.user;
+      // console.log(user)
+      setUser(res.user)
+      navigate('/')
+    })
+    .catch(err =>{
+      console.log(err)
+    })
+    
+    
   }
 
 
@@ -27,7 +38,7 @@ const Login = () => {
       navigate(location?.state ? location.state : "/");
     })
     .catch(err => {
-      console.log(err.message)
+      setError(err.message)
     })
    }
   return (
@@ -63,7 +74,12 @@ const Login = () => {
               className="input input-bordered"
               required
             />
+            <Link to="/passreset"><p>Forget Password</p></Link>
             {/* {error.login && <label className="label text-sm text-red-600">{error.login}</label>} */}
+            {
+                        error && <p className='text-md mt-1 text-red-500'>Invalid Email or Password! </p>
+             }
+            
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-neutral rounded-none">Login</button>

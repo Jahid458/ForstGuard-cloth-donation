@@ -8,6 +8,7 @@ import DonationCampaign from "../pages/DonationCampaign";
 import DonationDetails from "../pages/DonationDetails";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../components/ErrorPage";
+import ForgetPass from "../components/ForgetPass";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-    
+      {
+        path: '/passreset',
+        element: <ForgetPass></ForgetPass>
+      },
       {
         path: "/donationdetails/:id",
         element: (
@@ -60,7 +64,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      
     ],
   },
+
+
 ]);
 export default router;

@@ -5,7 +5,7 @@ const DonationCard = ({ donation }) => {
   
     console.log(donation)
   const {image,title,description,division} = donation;
-   console.log(image,title,description,division)
+  //  console.log(image,title,description,division)
   return (
     <div className="card card-compact bg-base-100 lg:w-96 mx-auto w-[380px] md:w-[355px] shadow-xl">
     

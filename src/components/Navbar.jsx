@@ -3,6 +3,8 @@ import logo from "../assets/clothes-donation.png";
 import usericon from "../assets/user.png";
 import { useContext } from "react";
 import { authContext } from "./AuthProvider";
+import 'animate.css';
+
 
 const Navbar = () => {
   const {user,handleLogout} = useContext(authContext);
@@ -53,7 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
         {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
-        <img src={logo} className="w-10 lg:w-20 ml-0" alt="" /> <span className="lg:text-2xl font-bold text-sky-500">FrostGuard</span>
+        <img src={logo} className="w-10 lg:w-20 ml-0" alt="" /> <span className="lg:text-2xl font-bold text-sky-500 animate__animated animate__rubberBand">FrostGuard</span>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-5 px-1">
@@ -75,8 +77,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-3">
         {
-          user && user?.email ? <div className="flex">
-            <img src={user.photoURL} alt="" className="w-12 rounded-full" />
+          user ? <div className="flex">
+            <img src={user?.photoURL} alt="" className="w-12 rounded-full" />
+           
           </div>:<img src={usericon} alt="" className="w-8 lg:w-10"/>
         }
         {

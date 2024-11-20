@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,updateProfile  } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut,updateProfile  } from 'firebase/auth';
 import  { createContext, useEffect, useState } from 'react';
 import auth from './../firebase/firebase.config';
 
@@ -13,10 +13,12 @@ export const authContext = createContext();
 const AuthProvider = ({children}) => {
   const googleProvider = new GoogleAuthProvider();
   const [user,setUser] = useState(null);
+  console.log(user)
 
 
   const handleResgister = (email,password) =>{
     return createUserWithEmailAndPassword(auth,email,password)
+    
   }
   
   const handleLogin = (email,password)=>{
@@ -24,34 +26,32 @@ const AuthProvider = ({children}) => {
   
    }
 
+
+
     const googleLogIn = ()=>{
-      signInWithPopup(auth,googleProvider)
-      .then(res => {
-        const user = res.user;
-        console.log(user)
-      })
-      .catch(err =>{
-        console.log(err)
-      })
+     return signInWithPopup(auth,googleProvider)
+      
     } 
-
-
-
-
+    const resetPassword = (email) =>{
+      // setLoading(true)
+      return sendPasswordResetEmail(auth,email)
+  }
   
    const handleLogout = () =>{
     return  signOut(auth)
    }
 
-   const updateUserProfile  = (updateData) =>{
-        return updateProfile(auth.currentUser, updateData)
+   const updateUserProfile  = (updatedData) =>{
+        return updateProfile(auth.currentUser, updatedData)
    }
+
 
 
    useEffect(()=>{
 
     const unsubscribe = onAuthStateChanged(auth, currentUser =>{
       setUser(currentUser)
+
     })
     return ()=>{
       unsubscribe()
@@ -68,7 +68,9 @@ const AuthProvider = ({children}) => {
     user,
     setUser,
     googleLogIn,
-    updateUserProfile
+    updateUserProfile,
+    resetPassword
+    
   }
   
   return (
