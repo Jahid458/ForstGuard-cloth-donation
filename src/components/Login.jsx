@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "./AuthProvider";
 import glogo from '../assets/google.webp'
+import toast from "react-hot-toast";
 
 
 const Login = () => {
@@ -21,6 +22,7 @@ const Login = () => {
     })
     .catch(err =>{
       console.log(err)
+      toast.error("Invalid Login")
     })
     
     
@@ -39,6 +41,7 @@ const Login = () => {
     })
     .catch(err => {
       setError(err.message)
+      toast.error("Invalid Login")
     })
    }
   return (

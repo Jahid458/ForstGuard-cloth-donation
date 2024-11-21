@@ -3,6 +3,7 @@ import { authContext } from "./AuthProvider";
 import glogo from '../assets/google.webp'
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 
 
@@ -54,21 +55,12 @@ const Register = () => {
        
 
       .catch((err) =>{
-        const errCode = err.code;
-        const errMsg = err.message;
-        console.log(errCode,errMsg) 
+        console.log(err)
+        toast.error("Invalid Register") 
       })
        
 
-        // eslint-disable-next-line no-undef
-        // updateUserProfile(name,image)
-        // .then(()=>{
-        //   setUser({displayName:name,photoURL:photo})
-        //   navigate('/')
-        // })
-        // .catch(err =>{
-        //   console.log(err)
-        // })
+    
       })
   }
 
