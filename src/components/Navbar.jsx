@@ -78,7 +78,7 @@ const Navbar = () => {
       <div className="navbar-end gap-3">
         {
           user ? <div className="flex">
-            <img src={user?.photoURL} alt="" className="w-12 rounded-full" />
+            <img src={user?.photoURL} alt="" className="w-12 rounded-[50%] border-4 border-sky-500" />
            
           </div>:<img src={usericon} alt="" className="w-8 lg:w-10"/>
         }

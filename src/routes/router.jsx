@@ -9,6 +9,7 @@ import DonationDetails from "../pages/DonationDetails";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../components/ErrorPage";
 import ForgetPass from "../components/ForgetPass";
+import UpdateProfile from "../components/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
           console.log(singleDonation);
           return singleDonation;
         },
+      },
+      {
+        path: '/updateProfile',
+        element: <UpdateProfile></UpdateProfile>
       },
       {
         path: "/login",

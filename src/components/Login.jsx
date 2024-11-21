@@ -5,7 +5,7 @@ import glogo from '../assets/google.webp'
 
 
 const Login = () => {
-  const {handleLogin,setUser,googleLogIn,user} = useContext(authContext);
+  const {handleLogin,setUser,googleLogIn} = useContext(authContext);
   const [error,setError] = useState()
   const navigate = useNavigate()
   const location = useLocation();
