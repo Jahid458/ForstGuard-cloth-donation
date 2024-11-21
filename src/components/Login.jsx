@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div className="w-[90%] md:w-[90%] lg:w-[100%] mx-auto">
       <div className=" flex justify-center items-center rounded-2xl bg-base-200 p-7 mb-5">
-        <div className="card bg-base-100 lg:w-full max-w-lg shrink-0 rounded-none p-10 ">
+        <div className="card bg-base-100 w-full p-3 lg:w-full max-w-lg shrink-0 rounded-none lg:p-10 ">
           <h2 className="text-2xl font-semibold text-center">
             Login Your Account
           </h2>
@@ -84,7 +84,7 @@ const Login = () => {
               <div className="divider">OR</div>
               <button
                 onClick={LogGoogle}
-                className="btn rounded-xl text-md font-bold"
+                className="btn rounded-xl px-4 text-xs font-bold"
               >
                 <img src={glogo} alt="" className="w-7" />
                 Continue With Google

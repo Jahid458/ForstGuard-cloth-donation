@@ -9,12 +9,12 @@ const About = () => {
     <div>
       <div className="hero-content  ">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold animate__animated animate__lightSpeedInLeft">Our Mission</h1>
-      <p className="mb-5 text-2xl text-white font-bold">
+      <h1 className="mb-5 lg:text-5xl text-3xl font-bold animate__animated animate__lightSpeedInLeft">Our Mission</h1>
+      <p className="mb-5 lg:text-2xl text-white font-bold">
       Our mission is to provide hope and dignity to those in need by connecting generous donors with underserved communities through the power of clothing donations. We strive to reduce waste, promote sustainability, and create a brighter future for al
       </p>
-      <h1 className="mb-5 text-5xl font-bold animate__animated animate__lightSpeedInLeft">Vision</h1>
-      <p className="mb-5 text-2xl text-white font-bold">
+      <h1 className="mb-5 lg:text-5xl text-3xl font-bold animate__animated animate__lightSpeedInLeft">Vision</h1>
+      <p className="mb-5 lg:text-2xl text-white font-bold">
       We envision a world where everyone has access to basic clothing essentials, fostering equality, compassion, and sustainable living for generations to come.
       </p>
 

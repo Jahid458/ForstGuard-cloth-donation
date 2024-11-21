@@ -2,8 +2,8 @@ import { FaTshirt, FaMapMarkerAlt, FaSmile } from "react-icons/fa";
 const Howwork = () => {
   return (
     <div className="bg-base-100 py-12 px-6">
-      <h2 className="text-4xl font-bold text-center mb-6">How IT Works</h2>
-      <p className="text-center text-gray-600 mb-10 text-2xl font-bold">
+      <h2 className="lg:text-4xl text-xl font-bold text-center mb-6">How IT Works</h2>
+      <p className="text-center text-gray-600 mb-10 lg:text-2xl text-md font-bold">
         Donating clothes is simple and impactful. Follow these three easy steps!
       </p>
 

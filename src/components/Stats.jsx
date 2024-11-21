@@ -27,7 +27,7 @@ const Stats = () => {
 
   return (
     <div className="bg-base-100 py-12 px-6">
-         <h2 className="text-4xl font-bold text-center mb-6">Our Impact at a glance</h2>
+         <h2 className="lg:text-4xl text-xl font-bold text-center mb-6">Our Impact at a glance</h2>
       <div className="container mx-auto  text-white shadow-lg py-10 px-10 rounded-xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {stats.map((stat) => (

@@ -33,7 +33,7 @@ const Services = () => {
   ];
 
   return <div className="bg-base-100 py-12 px-6">
-  <h2 className="text-4xl font-bold text-center mb-6">Our Services</h2>
+  <h2 className="lg:text-4xl text-xl font-bold text-center mb-6">Our Services</h2>
   <p className="text-center text-gray-600 mb-10">
     Explore how we make clothing donation easy, impactful, and sustainable.
   </p>
