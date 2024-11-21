@@ -48,6 +48,7 @@ const Register = () => {
         updateUserProfile({displayName:name,photoURL:photo})
         .then(()=>{
           navigate('/')
+          setUser({displayName:name,photoURL:photo})
         })
         console.log(res)
        
