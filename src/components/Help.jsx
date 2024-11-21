@@ -40,7 +40,7 @@ const Help = () => {
       </div>
     </div>
 
-    <div className="bg-sky-500 text-white p-8 rounded-lg">
+    <div className="bg-sky-500 text-white p-8 rounded-lg ">
       <h3 className="text-3xl font-bold text-center mb-4">
         Need Assistance?
       </h3>

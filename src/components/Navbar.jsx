@@ -40,7 +40,7 @@ const Navbar = () => {
           >
             <NavLink
               className={({ isActive }) =>
-                `${isActive ? " btn bg-sky-500 text-white" : "btn"}`
+                `${isActive ? "  text-sky-500" : "hover:text-sky-500"}`
               }
               to="/"
             >
@@ -48,7 +48,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `${isActive ? " btn bg-sky-500 text-white" : "btn"}`
+                `${isActive ?  "  text-sky-500" : "hover:text-sky-500"}`
               }
               to="/donationcampaign"
             >
@@ -56,7 +56,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `${isActive ? " btn bg-sky-500 text-white" : "btn "}`
+                `${isActive ?  "  text-sky-500" : "hover:text-sky-500"}`
               }
               to="/help"
             >
@@ -64,7 +64,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `${isActive ? " btn bg-sky-500 text-white" : "btn"}`
+                `${isActive ?  "  text-sky-500" : "hover:text-sky-500"}`
               }
               to="/dashboard"
             >
@@ -82,7 +82,7 @@ const Navbar = () => {
         <ul className="flex gap-5 px-1">
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? " btn bg-sky-500 text-white" : "btn"}`
+              `${isActive ?  "   text-sky-500" : "hover:text-sky-500"}`
             }
             to="/"
           >
@@ -90,7 +90,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? " btn bg-sky-500 text-white" : "btn"}`
+              `${isActive ?  "   text-sky-500" : "hover:text-sky-500"}`
             }
             to="/donationcampaign"
           >
@@ -98,7 +98,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? " btn bg-sky-500 text-white" : "btn "}`
+              `${isActive ?  "  text-sky-500" : "hover:text-sky-500"}`
             }
             to="/help"
           >
@@ -106,7 +106,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? " btn bg-sky-500 text-white" : "btn"}`
+              `${isActive ?  "  text-sky-500 " : "hover:text-sky-500"}`
             }
             to="/dashboard"
           >
@@ -115,15 +115,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-        {/* {
-          user && user?.photoURL  && <div className="flex">
-          <img
-            src={user?.photoURL && user?.photoURL}
-            alt=""
-            className="w-12 h-12 rounded-[50%] border-4 border-sky-500"
-          />
-        </div>
-        } */}
+    
         {user?.email ? (
           <div className="flex">
             <img

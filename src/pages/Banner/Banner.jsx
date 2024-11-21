@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="carousel w-full  mt-4">
+    <div className="carousel w-full h-[500px]  mt-4">
       <div id="slide1" className="carousel-item relative w-full ">
         <img
           src="https://i.ibb.co.com/DtrJmWQ/4912879.jpg"
@@ -18,7 +18,7 @@ const Banner = () => {
       <div id="slide2" className="carousel-item relative w-full">
         <img
           src="https://i.ibb.co.com/BT4BNkR/4897887.jpg"
-          className="w-full "
+          className="w-full"
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
           <a href="#slide1" className="btn btn-circle">

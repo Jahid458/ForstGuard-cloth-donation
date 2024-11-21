@@ -9,7 +9,7 @@ const HomeLayout = () => {
   return <div className="">
         <Toaster></Toaster>
         <Navbar></Navbar>
-       <div className="min-h-[calc(100vh-344px)] container mx-auto">
+       <div className="min-h-[calc(100vh-344px)] w-11/12 mx-auto">
        <Outlet></Outlet>
        </div>
         <Footer></Footer>
