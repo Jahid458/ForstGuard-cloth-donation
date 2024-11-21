@@ -59,8 +59,6 @@ const Register = () => {
         toast.error("Invalid Register") 
       })
        
-
-    
       })
   }
 

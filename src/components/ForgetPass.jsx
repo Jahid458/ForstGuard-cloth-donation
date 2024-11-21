@@ -15,7 +15,7 @@ const ForgetPass = () => {
 
     resetPassword(email)
     .then(() =>{
-        // window.location.href = "https://mail.google.com";
+        window.location.href = "https://mail.google.com";
     })
     .catch(error =>{
         console.log(error)
