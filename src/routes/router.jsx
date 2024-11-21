@@ -10,6 +10,8 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../components/ErrorPage";
 import ForgetPass from "../components/ForgetPass";
 import UpdateProfile from "../components/UpdateProfile";
+import Help from './../components/Help';
+
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/help",
-        element: <h1>How To Help</h1>,
+        element: <Help></Help>,
       },
       {
         path: "/dashboard",
