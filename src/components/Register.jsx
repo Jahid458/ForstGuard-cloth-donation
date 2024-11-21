@@ -48,6 +48,7 @@ const Register = () => {
         setUser(res.user)
         updateUserProfile({displayName:name,photoURL:photo})
         .then(()=>{
+          toast.success('Register Successfully')
           navigate('/')
           setUser({displayName:name,photoURL:photo})
         })
