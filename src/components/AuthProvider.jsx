@@ -13,15 +13,18 @@ export const authContext = createContext();
 const AuthProvider = ({children}) => {
   const googleProvider = new GoogleAuthProvider();
   const [user,setUser] = useState(null);
-  console.log(user)
+  const [loading,setLoading] = useState(true);
+  // console.log(user)
 
 
   const handleResgister = (email,password) =>{
+    setLoading(true)
     return createUserWithEmailAndPassword(auth,email,password)
     
   }
   
   const handleLogin = (email,password)=>{
+    setLoading(true)
     return  signInWithEmailAndPassword(auth,email,password)
   
    }
@@ -29,19 +32,22 @@ const AuthProvider = ({children}) => {
 
 
     const googleLogIn = ()=>{
+      setLoading(true)
      return signInWithPopup(auth,googleProvider)
       
     } 
     const resetPassword = (email) =>{
-      // setLoading(true)
+      setLoading(true)
       return sendPasswordResetEmail(auth,email)
   }
   
    const handleLogout = () =>{
+    setLoading(true)
     return  signOut(auth)
    }
 
    const updateUserProfile  = (updatedData) =>{
+         setLoading(true)
         return updateProfile(auth.currentUser, updatedData)
    }
 
@@ -51,6 +57,7 @@ const AuthProvider = ({children}) => {
 
     const unsubscribe = onAuthStateChanged(auth, currentUser =>{
       setUser(currentUser)
+      setLoading(false)
 
     })
     return ()=>{
@@ -69,7 +76,8 @@ const AuthProvider = ({children}) => {
     setUser,
     googleLogIn,
     updateUserProfile,
-    resetPassword
+    resetPassword,
+    loading
     
   }
   

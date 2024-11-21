@@ -15,14 +15,12 @@ const Login = () => {
   const LogGoogle = ()=>{
     googleLogIn()
     .then(res => {
-      // const user = res.user;
-      // console.log(user)
+
       setUser(res.user)
       navigate('/')
     })
     .catch(err =>{
-      console.log(err)
-      toast.error("Invalid Login")
+      toast.error(err,"Invalid Login")
     })
     
     

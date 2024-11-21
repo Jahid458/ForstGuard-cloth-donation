@@ -6,11 +6,10 @@ import { authContext } from "./AuthProvider";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  // const {user} = useContext(authContext);
-  // console.log(user)
+
   const { user } = useContext(authContext);
 
-  console.log(user);
+ 
   return (
     
     <div className="text-center lg:py-10 lg:px-9  mt-14 mb-14 bg-gray-50 shadow-xl rounded-lg max-w-md mx-auto space-y-4 flex flex-col">

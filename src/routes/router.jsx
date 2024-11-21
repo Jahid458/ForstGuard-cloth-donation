@@ -53,7 +53,7 @@ const router = createBrowserRouter([
           const res = await fetch("/Donation.json");
           const donationdata = await res.json();
           const singleDonation = donationdata.find((d) => d.id == params.id);
-          console.log(singleDonation);
+         
           return singleDonation;
         },
       },

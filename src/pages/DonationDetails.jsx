@@ -6,10 +6,9 @@ const DonationDetails = () => {
   const { title, image, description, status, contactInfo, division } =
     useLoaderData();
 
-
   const [formData, setFormData] = useState({
     quantity: "",
-    itemType: "Blanket", 
+    itemType: "Blanket",
     pickLocation: "",
     message: "",
   });
@@ -32,8 +31,7 @@ const DonationDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast.success("Thank you! We will reach your destination soon");
-    
-    
+
     setFormData({
       quantity: "",
       itemType: "Blanket",
@@ -45,14 +43,14 @@ const DonationDetails = () => {
   return (
     <div>
       <div
-        className="hero lg:w-full w-[300px] md:w-[750px] mx-auto min-h-screen mt-5 mb-5"
+        className="hero lg:w-full   md:w-[750px] mx-auto min-h-screen mt-5 mb-5"
         style={{
           backgroundImage: `url(${image})`,
         }}
       >
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div>
-            <h1 className="lg:text-6xl text-xl font-bold text-white">
+            <h1 className="lg:text-6xl text-xl md:text-4xl font-bold text-black">
               {title}
             </h1>
             <p className="py-6 lg:text-2xl text-md font-bold text-black">
@@ -70,10 +68,16 @@ const DonationDetails = () => {
             <br />
 
             <div className="card mx-auto bg-base-100 w-full lg:max-w-lg shrink-0 shadow-2xl">
-              <form name="donation-form" onSubmit={handleSubmit} className="card-body">
+              <form
+                name="donation-form"
+                onSubmit={handleSubmit}
+                className="card-body"
+              >
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-xl">Quantity of items</span>
+                    <span className="label-text text-xl">
+                      Quantity of items
+                    </span>
                   </label>
                   <input
                     type="number"

@@ -12,7 +12,7 @@ const UpdateProfile = () => {
         const form = new FormData(e.target);
         const name = form.get("name")
         const photo = form.get("photo")
-        console.log(name,photo)
+        // console.log(name,photo)
 
         updateUserProfile({displayName:name, photoURL:photo})
             .then(()=>{

@@ -51,12 +51,10 @@ const Register = () => {
           navigate('/')
           setUser({displayName:name,photoURL:photo})
         })
-        console.log(res)
        
 
       .catch((err) =>{
-        console.log(err)
-        toast.error("Invalid Register") 
+        toast.error(err,"Invalid Register") 
       })
        
       })
