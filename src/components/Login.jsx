@@ -72,6 +72,7 @@ const Login = () => {
               <Link to="/passreset">
                 <p>Forget Password</p>
               </Link>
+             
               {/* {error.login && <label className="label text-sm text-red-600">{error.login}</label>} */}
               {error && (
                 <p className="text-md mt-1 text-red-500">

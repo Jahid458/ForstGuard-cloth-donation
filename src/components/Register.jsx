@@ -30,7 +30,8 @@ const Register = () => {
       const photo = e.target.photo.value;
       const email = e.target.email.value;
       const password = e.target.password.value;
-   
+
+
 
       
 
@@ -47,6 +48,7 @@ const Register = () => {
       .then(res => {
         setUser(res.user)
         updateUserProfile({displayName:name,photoURL:photo})
+        alert("Register Sucessfull")
         .then(()=>{
           toast.success('Register Successfully')
           navigate('/')

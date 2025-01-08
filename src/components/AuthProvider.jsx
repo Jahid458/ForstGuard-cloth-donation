@@ -6,17 +6,11 @@ import auth from './../firebase/firebase.config';
 
 export const authContext = createContext();
 
-
-
-
-
 const AuthProvider = ({children}) => {
   const googleProvider = new GoogleAuthProvider();
   const [user,setUser] = useState(null);
   const [loading,setLoading] = useState(true);
   // console.log(user)
-
-
   const handleResgister = (email,password) =>{
     setLoading(true)
     return createUserWithEmailAndPassword(auth,email,password)
